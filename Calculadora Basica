@@ -1,0 +1,26 @@
+
+let num1 = parseFloat(prompt("Digite o primeiro numero: "));
+let operacoes = prompt("Escolha a operação (+, -, *, /): ")
+let num2 = parseFloat(prompt("Digite o segundo numero numero: "));
+
+switch (operacoes) {
+    case '+':
+        resultado = num1 + num2;
+        break;
+    case '-':
+        resultado = num1 - num2;
+        break;
+    case '*':
+        resultado = num1 * num2;
+        break;
+    case '/':
+        resultado = num1 / num2;
+        break;
+    default:
+        console.log("Operação invalida!");
+        break;
+}
+
+if (resultado !== undefined) {
+    console.log("Resultado: " + resultado);
+}
