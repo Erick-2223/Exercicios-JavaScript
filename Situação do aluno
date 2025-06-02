@@ -1,0 +1,43 @@
+let notas = [];
+let continuar = true;
+
+while (continuar) {
+    let entrada = prompt("Digite uma nota (ou 'sair' para encerrar):");
+
+    if (entrada.toLowerCase() === 'sair') {
+        continuar = false;
+        break;
+    }
+
+    let nota = parseFloat(entrada);
+
+    if (!isNaN(nota) && nota >= 0 && nota <= 10) {
+        notas.push(nota);
+    } else {
+        alert("Nota inválida! Digite um número entre 0 e 10.");
+    }
+}
+
+if (notas.length > 0) {
+    let soma = 0;
+    for (let i = 0; i < notas.length; i++) {
+        soma += notas[i];
+    }
+
+    let media = soma / notas.length;
+    let situacao;
+
+    if (media < 5) {
+        situacao = "Reprovado";
+    } else if (media < 7) {
+        situacao = "Recuperação";
+    } else {
+        situacao = "Aprovado";
+    }
+
+    alert("Notas: " + notas.join(", "));
+    alert("Média: " + media.toFixed(2));
+    alert("Situação final: " + situacao);
+} else {
+    alert("nenhuma nota valida foi inserida.");
+}
